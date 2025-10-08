@@ -21,10 +21,10 @@ def has_xmas(i, j, d):
         ii = i + k * dx
         jj = j + k * dy
         if not (0 <= ii < n and 0 <= jj < m):
-            return False
+            return 0
         if lines[ii][jj] != x:
-            return False
-    return True
+            return 0
+    return 1
 
 # Count up every cell and every direction
 ans = 0
@@ -32,5 +32,6 @@ for i in range(n):
     for j in range(m):
         for d in dd:
             ans += has_xmas(i, j, d)
+
 
 print(ans)
